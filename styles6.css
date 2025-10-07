@@ -1,0 +1,678 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;                    /* Remove default margin from all elements */
+    padding: 0;                  /* Remove default padding from all elements */
+    box-sizing: border-box;      /* Include padding and border in element's total width and height */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Set the main font family for the entire page */
+    line-height: 1.6;               /* Set line spacing to 1.6 times the font size for better readability */
+    color: #333;                    /* Set default text color to dark gray */
+    overflow-x: hidden;            /* Hide horizontal scrollbar to prevent side-scrolling */
+}
+
+.container {
+    max-width: 1200px;            /* Limit maximum width to 1200 pixels */
+    margin: 0 auto;               /* Center the container horizontally */
+    padding: 0 20px;              /* Add 20px padding on left and right sides */
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;                           /* Fix navbar to viewport, stays in place when scrolling */
+    top: 0;                                   /* Position at the very top of the page */
+    width: 100%;                              /* Make navbar span the full width of the screen */
+    background: rgba(255, 255, 255, 0.95);   /* Semi-transparent white background (95% opacity) */
+    z-index: 1000;                           /* High z-index to ensure navbar appears above other elements */
+    padding: 1rem 0;                         /* Add 1rem padding on top and bottom */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Add subtle shadow below navbar */
+}
+
+.nav-container {
+    max-width: 1200px;              /* Limit container width to 1200px */
+    margin: 0 auto;                 /* Center the navigation container */
+    padding: 0 20px;                /* Add 20px padding on left and right */
+    display: flex;                  /* Use flexbox layout */
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center;            /* Vertically center all navigation items */
+}
+
+.nav-logo h2 {
+    color: #2d5a3d;        /* Set logo text color to dark green */
+    font-size: 1.8rem;     /* Set logo font size to 1.8rem */
+    font-weight: 700;      /* Make logo text bold (700 weight) */
+}
+
+.nav-menu {
+    display: flex;     /* Display menu items in a horizontal row */
+    list-style: none;  /* Remove bullet points from list items */
+    gap: 2rem;         /* Add 2rem space between menu items */
+}
+
+.nav-menu a {
+    color: #333;                    /* Set link color to dark gray */
+    text-decoration: none;          /* Remove underline from links */
+    font-weight: 500;               /* Set medium font weight */
+    transition: color 0.3s ease;    /* Smooth color transition over 0.3 seconds */
+}
+
+.nav-menu a:hover {
+    color: #4a7c59;     /* Change link color to green when hovered */
+}
+
+.nav-cart {
+    font-size: 1.5rem;  /* Make cart icon larger */
+    cursor: pointer;    /* Change cursor to pointer when hovering over cart */
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;                                    /* Add top margin to account for fixed navbar */
+    padding: 80px 0;                                     /* Add 80px padding on top and bottom */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Create diagonal gradient background */
+}
+
+.hero-content {
+    max-width: 1200px;              /* Limit content width to 1200px */
+    margin: 0 auto;                 /* Center the hero content */
+    padding: 0 20px;                /* Add horizontal padding */
+    display: grid;                  /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    gap: 4rem;                      /* Add 4rem gap between grid items */
+    align-items: center;            /* Vertically center grid items */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;      /* Set large heading font size */
+    font-weight: 700;       /* Make heading bold */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 1.5rem;  /* Add space below heading */
+    line-height: 1.2;       /* Set tight line spacing for better appearance */
+}
+
+.hero-text p {
+    font-size: 1.2rem;      /* Set paragraph font size slightly larger than default */
+    color: #666;            /* Set paragraph color to medium gray */
+    margin-bottom: 2rem;    /* Add space below paragraph */
+}
+
+.cta-button {
+    background: #4a7c59;            /* Set button background to green */
+    color: white;                   /* Set button text color to white */
+    padding: 1rem 2rem;             /* Add padding inside button (top/bottom 1rem, left/right 2rem) */
+    border: none;                   /* Remove default button border */
+    border-radius: 100px;           /* Make button fully rounded */
+    font-size: 1.1rem;              /* Set button text size */
+    font-weight: 600;               /* Make button text semi-bold */
+    cursor: pointer;                /* Change cursor to pointer on hover */
+    transition: all 0.3s ease;      /* Smooth transition for all properties */
+}
+
+.cta-button:hover {
+    background: #3d6b4a;            /* Darken button background on hover */
+    transform: translateY(-2px);    /* Move button up 2px on hover for lift effect */
+}
+
+.hero-image img {
+    width: 100%;                              /* Make image fill container width */
+    height: 400px;                            /* Set fixed image height */
+    object-fit: cover;                        /* Crop image to fit container while maintaining aspect ratio */
+    border-radius: 20px;                      /* Round image corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Add soft shadow below image */
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;        /* Add 80px padding on top and bottom of section */
+    background: #fff;       /* Set background color to white */
+}
+
+.feature-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive columns, minimum 250px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+}
+
+.feature-card {
+    text-align: center;             /* Center align all text inside cards */
+    padding: 2rem;                  /* Add 2rem padding inside each card */
+    border-radius: 15px;            /* Round card corners */
+    background: #f8faf8;            /* Set light green background color */
+    transition: transform 0.3s ease; /* Smooth transition for transform property */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);    /* Move card up 5px on hover for lift effect */
+}
+
+.feature-icon {
+    font-size: 3rem;        /* Make icons large (3rem) */
+    margin-bottom: 1rem;    /* Add space below icons */
+}
+
+.feature-card h3 {
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 1rem;    /* Add space below heading */
+    font-size: 1.3rem;      /* Set heading font size */
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #f8faf8;    /* Set light green background color */
+}
+
+.about-content {
+    display: grid;                  /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    gap: 4rem;                      /* Add 4rem gap between columns */
+    align-items: center;            /* Vertically center grid items */
+}
+
+.about-image img {
+    width: 100%;            /* Make image fill container width */
+    height: 500px;          /* Set fixed image height */
+    object-fit: cover;      /* Crop image to fit while maintaining aspect ratio */
+    border-radius: 20px;    /* Round image corners */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 1.5rem;  /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;  /* Add space below each paragraph */
+    color: #666;            /* Set paragraph color to medium gray */
+    font-size: 1.1rem;      /* Set paragraph font size slightly larger */
+}
+
+.learn-more-btn {
+    background: transparent;        /* Make button background transparent */
+    color: #4a7c59;                /* Set button text color to green */
+    padding: 1rem 2rem;            /* Add padding inside button */
+    border: 2px solid #4a7c59;     /* Add green border around button */
+    border-radius: 50px;           /* Make button fully rounded */
+    font-weight: 600;              /* Make button text semi-bold */
+    cursor: pointer;               /* Change cursor to pointer on hover */
+    transition: all 0.3s ease;     /* Smooth transition for all properties */
+}
+
+.learn-more-btn:hover {
+    background: #4a7c59;    /* Fill button with green background on hover */
+    color: white;           /* Change text color to white on hover */
+}
+
+/* Info Cards Section */
+.info-cards {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #4a7c59;    /* Set dark green background color */
+    color: white;           /* Set all text color to white */
+    text-align: center;     /* Center align all text in this section */
+}
+
+.info-cards h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    margin-bottom: 3rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.cards-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Create responsive columns, minimum 300px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+}
+
+.info-card {
+    padding: 2rem;                              /* Add 2rem padding inside each card */
+    background: rgba(255, 255, 255, 0.1);      /* Semi-transparent white background (10% opacity) */
+    border-radius: 15px;                       /* Round card corners */
+    backdrop-filter: blur(10px);               /* Apply blur effect to background */
+}
+
+.info-card h3 {
+    margin-bottom: 1rem;    /* Add space below card heading */
+    font-size: 1.3rem;      /* Set card heading font size */
+}
+
+/* Garden Life Section */
+.garden-life {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #fff;       /* Set background color to white */
+    text-align: center;     /* Center align all text in this section */
+}
+
+.garden-life h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 3rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.garden-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive columns, minimum 250px wide */
+    gap: 1.5rem;                                            /* Add 1.5rem gap between grid items */
+}
+
+.garden-item img {
+    width: 100%;                    /* Make image fill container width */
+    height: 250px;                  /* Set fixed image height */
+    object-fit: cover;              /* Crop image to fit while maintaining aspect ratio */
+    border-radius: 15px;            /* Round image corners */
+    transition: transform 0.3s ease; /* Smooth transition for transform property */
+}
+
+.garden-item:hover img {
+    transform: scale(1.05);         /* Scale image up 5% on hover for zoom effect */
+}
+
+/* Products Section */
+.products {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #f8faf8;    /* Set light green background color */
+    text-align: center;     /* Center align all text in this section */
+}
+
+.products h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 3rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.products-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive columns, minimum 250px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+}
+
+.product-card {
+    background: white;                      /* Set card background to white */
+    border-radius: 15px;                   /* Round card corners */
+    overflow: hidden;                      /* Hide content that extends beyond rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add soft shadow below card */
+    transition: transform 0.3s ease;       /* Smooth transition for transform property */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);          /* Move card up 10px on hover for lift effect */
+}
+
+.product-card img {
+    width: 100%;            /* Make image fill card width */
+    height: 250px;          /* Set fixed image height */
+    object-fit: cover;      /* Crop image to fit while maintaining aspect ratio */
+}
+
+.product-card h3 {
+    padding: 1rem;          /* Add padding around product title */
+    color: #2d5a3d;         /* Set title color to dark green */
+    font-size: 1.2rem;      /* Set title font size */
+}
+
+.price {
+    padding: 0 1rem 1.5rem; /* Add padding: 0 top, 1rem left/right, 1.5rem bottom */
+    font-size: 1.3rem;      /* Set price font size */
+    font-weight: 700;       /* Make price text bold */
+    color: #4a7c59;         /* Set price color to green */
+}
+
+/* Growth Spirit Section */
+.growth-spirit {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: white;      /* Set background color to white */
+}
+
+.growth-content {
+    display: grid;                  /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    gap: 4rem;                      /* Add 4rem gap between columns */
+    align-items: center;            /* Vertically center grid items */
+}
+
+.growth-text h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 2rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.growth-features {
+    list-style: none;       /* Remove bullet points from list */
+}
+
+.growth-features li {
+    padding: 0.8rem 0;      /* Add padding on top and bottom of each list item */
+    font-size: 1.1rem;      /* Set list item font size slightly larger */
+    color: #666;            /* Set list item color to medium gray */
+}
+
+.growth-image img {
+    width: 100%;            /* Make image fill container width */
+    height: 400px;          /* Set fixed image height */
+    object-fit: cover;      /* Crop image to fit while maintaining aspect ratio */
+    border-radius: 20px;    /* Round image corners */
+}
+
+/* Blog Section */
+.blog-section {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #f0e68c;    /* Set yellow/khaki background color */
+}
+
+.blog-content {
+    display: grid;                  /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    gap: 4rem;                      /* Add 4rem gap between columns */
+    align-items: center;            /* Vertically center grid items */
+}
+
+.blog-text h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 1.5rem;  /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.blog-text p {
+    margin-bottom: 2rem;    /* Add space below paragraph */
+    color: #666;            /* Set paragraph color to medium gray */
+    font-size: 1.1rem;      /* Set paragraph font size slightly larger */
+}
+
+.read-more-btn {
+    background: #2d5a3d;            /* Set button background to dark green */
+    color: white;                   /* Set button text color to white */
+    padding: 1rem 2rem;             /* Add padding inside button */
+    border: none;                   /* Remove default button border */
+    border-radius: 50px;            /* Make button fully rounded */
+    font-weight: 600;               /* Make button text semi-bold */
+    cursor: pointer;                /* Change cursor to pointer on hover */
+    transition: all 0.3s ease;      /* Smooth transition for all properties */
+}
+
+.read-more-btn:hover {
+    background: #1f3d29;            /* Darken button background on hover */
+}
+
+.blog-grid {
+    display: grid;              /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    gap: 1rem;                  /* Add 1rem gap between grid items */
+}
+
+.blog-grid img {
+    width: 100%;                /* Make image fill container width */
+    height: 150px;              /* Set fixed image height */
+    object-fit: cover;          /* Crop image to fit while maintaining aspect ratio */
+    border-radius: 10px;        /* Round image corners */
+}
+
+/* Reviews Section */
+.reviews {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #f8faf8;    /* Set light green background color */
+    text-align: center;     /* Center align all text in this section */
+}
+
+.reviews h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    margin-bottom: 3rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.reviews-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Create responsive columns, minimum 300px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+}
+
+.review-card {
+    background: white;                      /* Set card background to white */
+    padding: 2rem;                         /* Add 2rem padding inside card */
+    border-radius: 15px;                   /* Round card corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add soft shadow below card */
+}
+
+.review-card p {
+    margin-bottom: 1.5rem;  /* Add space below review text */
+    font-style: italic;     /* Make review text italic */
+    color: #666;            /* Set review text color to medium gray */
+}
+
+.reviewer {
+    display: flex;          /* Use flexbox layout for reviewer info */
+    align-items: center;    /* Vertically center reviewer elements */
+    gap: 1rem;              /* Add 1rem gap between reviewer elements */
+}
+
+.reviewer img {
+    width: 50px;            /* Set reviewer image width */
+    height: 50px;           /* Set reviewer image height */
+    border-radius: 50%;     /* Make reviewer image circular */
+}
+
+.reviewer h4 {
+    color: #2d5a3d;         /* Set reviewer name color to dark green */
+}
+
+/* Articles Section */
+.articles {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: white;      /* Set background color to white */
+}
+
+.articles-header {
+    display: flex;              /* Use flexbox layout for header */
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center;        /* Vertically center header elements */
+    margin-bottom: 3rem;        /* Add space below header */
+}
+
+.articles-header h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    color: #2d5a3d;         /* Set heading color to dark green */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.view-all-btn {
+    background: transparent;        /* Make button background transparent */
+    color: #4a7c59;                /* Set button text color to green */
+    padding: 1rem 2rem;            /* Add padding inside button */
+    border: 2px solid #4a7c59;     /* Add green border around button */
+    border-radius: 50px;           /* Make button fully rounded */
+    font-weight: 600;              /* Make button text semi-bold */
+    cursor: pointer;               /* Change cursor to pointer on hover */
+    transition: all 0.3s ease;     /* Smooth transition for all properties */
+}
+
+.view-all-btn:hover {
+    background: #4a7c59;    /* Fill button with green background on hover */
+    color: white;           /* Change text color to white on hover */
+}
+
+.articles-grid {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Create responsive columns, minimum 350px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+}
+
+.article-card {
+    background: white;                      /* Set card background to white */
+    border-radius: 15px;                   /* Round card corners */
+    overflow: hidden;                      /* Hide content that extends beyond rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add soft shadow below card */
+    transition: transform 0.3s ease;       /* Smooth transition for transform property */
+}
+
+.article-card:hover {
+    transform: translateY(-5px);           /* Move card up 5px on hover for lift effect */
+}
+
+.article-card img {
+    width: 100%;            /* Make image fill card width */
+    height: 200px;          /* Set fixed image height */
+    object-fit: cover;      /* Crop image to fit while maintaining aspect ratio */
+}
+
+.article-content {
+    padding: 1.5rem;        /* Add padding inside article content area */
+}
+
+.article-content h3 {
+    color: #2d5a3d;         /* Set article title color to dark green */
+    margin-bottom: 1rem;    /* Add space below title */
+    font-size: 1.3rem;      /* Set title font size */
+}
+
+.article-content p {
+    color: #666;            /* Set article text color to medium gray */
+    margin-bottom: 1rem;    /* Add space below article text */
+}
+
+.article-date {
+    color: #999;            /* Set date color to light gray */
+    font-size: 0.9rem;      /* Set date font size smaller */
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 80px 0;        /* Add 80px padding on top and bottom */
+    background: #2d5a3d;    /* Set dark green background color */
+    color: white;           /* Set all text color to white */
+    text-align: center;     /* Center align all text in this section */
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;      /* Set large heading font size */
+    margin-bottom: 1rem;    /* Add space below heading */
+    font-weight: 700;       /* Make heading bold */
+}
+
+.newsletter p {
+    margin-bottom: 2rem;    /* Add space below paragraph */
+    font-size: 1.1rem;      /* Set paragraph font size slightly larger */
+}
+
+.newsletter-form {
+    display: flex;              /* Use flexbox layout for form */
+    gap: 1rem;                  /* Add 1rem gap between form elements */
+    justify-content: center;    /* Center the form horizontally */
+    max-width: 500px;           /* Limit form width to 500px */
+    margin: 0 auto;             /* Center the form container */
+}
+
+.newsletter-form input {
+    flex: 1;                /* Make input take remaining space */
+    padding: 1rem;          /* Add padding inside input field */
+    border: none;           /* Remove default input border */
+    border-radius: 50px;    /* Make input fully rounded */
+    font-size: 1rem;        /* Set input font size */
+}
+
+.newsletter-form button {
+    background: #4a7c59;            /* Set button background to green */
+    color: white;                   /* Set button text color to white */
+    padding: 1rem 2rem;             /* Add padding inside button */
+    border: none;                   /* Remove default button border */
+    border-radius: 50px;            /* Make button fully rounded */
+    font-weight: 600;               /* Make button text semi-bold */
+    cursor: pointer;                /* Change cursor to pointer on hover */
+    transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+.newsletter-form button:hover {
+    background: #3d6b4a;            /* Darken button background on hover */
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;    /* Set dark background color */
+    color: white;           /* Set all text color to white */
+    padding: 60px 0 20px;   /* Add 60px top padding, 20px bottom padding */
+}
+
+.footer-content {
+    display: grid;                                           /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive columns, minimum 250px wide */
+    gap: 2rem;                                              /* Add 2rem gap between grid items */
+    margin-bottom: 2rem;                                    /* Add space below footer content */
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;    /* Add space below footer headings */
+    color: #4a7c59;         /* Set heading color to green */
+}
+
+.footer-section ul {
+    list-style: none;       /* Remove bullet points from footer lists */
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;  /* Add space below each list item */
+}
+
+.footer-section a {
+    color: #ccc;                    /* Set link color to light gray */
+    text-decoration: none;          /* Remove underline from links */
+    transition: color 0.3s ease;    /* Smooth color transition */
+}
+
+.footer-section a:hover {
+    color: #4a7c59;         /* Change link color to green on hover */
+}
+
+.social-links {
+    display: flex;          /* Use flexbox layout for social links */
+    gap: 1rem;              /* Add 1rem gap between social icons */
+    margin-top: 1rem;       /* Add space above social links */
+}
+
+.social-links a {
+    font-size: 1.5rem;      /* Make social icons larger */
+}
+
+.footer-bottom {
+    text-align: center;     /* Center align footer bottom text */
+    padding-top: 2rem;      /* Add padding above footer bottom */
+    border-top: 1px solid #333; /* Add thin border above footer bottom */
+    color: #999;            /* Set text color to light gray */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {                    /* Apply styles when screen width is 768px or less */
+    .hero-content,
+    .about-content,
+    .growth-content,
+    .blog-content {
+        grid-template-columns: 1fr;            /* Change to single column layout */
+        gap: 2rem;                             /* Reduce gap between items */
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;                     /* Reduce hero heading size on mobile */
+    }
+    
+    .nav-menu {
+        display: none;                         /* Hide navigation menu on mobile */
+    }
+    
+    .newsletter-form {
+        flex-direction: column;                /* Stack newsletter form elements vertically */
+    }
+    
+    .articles-header {
+        flex-direction: column;                /* Stack articles header elements vertically */
+        gap: 1rem;                            /* Add gap between stacked elements */
+    }
+    
+    .container {
+        padding: 0 15px;                      /* Reduce container padding on mobile */
+    }
+}
